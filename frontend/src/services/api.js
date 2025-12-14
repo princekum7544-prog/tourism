@@ -1,4 +1,5 @@
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://tourism-backend-e1u0.onrender.com/api';
+
 
 export const planTrip = async (data) => {
     try {
