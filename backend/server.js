@@ -8,19 +8,27 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Middleware
-app.use(cors());
+// ✅ FIXED CORS (VERY IMPORTANT)
+app.use(cors({
+    origin: "*",
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"]
+}));
+
+// ✅ Allow preflight requests
+app.options("*", cors());
+
 app.use(express.json());
 
-// Routes
-app.use('/api', planRoute);
+// ✅ API Routes
+app.use('/api/plan', planRoute);
 
-// Health Check
+// Health check
 app.get('/', (req, res) => {
     res.send('EmoTravel API is running (Calmly).');
 });
 
-// Start Server
+// Start server
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });

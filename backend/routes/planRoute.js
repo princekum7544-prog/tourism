@@ -3,7 +3,7 @@ const router = express.Router();
 const { getTravelIntent } = require('../services/emotionEngine');
 const { getDestinations } = require('../services/groqService');
 
-router.post('/plan', async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         const { emotion, people, duration, budget, notes } = req.body;
 
