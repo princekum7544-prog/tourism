@@ -1,0 +1,23 @@
+{
+  "name": "emotravel",
+  "version": "1.0.0",
+  "description": "Node.js + Express backend for the Emotion-Driven Travel Platform. Powered by a rule-based Emotion Engine and Google Gemini API.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "better-sqlite3": "^12.5.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "groq-sdk": "^0.37.0"
+  },
+  "devDependencies": {}
+}
