@@ -8,22 +8,22 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-/* ✅ HARD CORS FIX */
+/* ✅ CORS */
 app.use(cors({
   origin: "*",
   methods: ["GET", "POST", "OPTIONS"],
   allowedHeaders: ["Content-Type"]
 }));
 
-/* ✅ THIS IS THE KEY LINE (MOST IMPORTANT) */
+/* ✅ Preflight */
 app.options("*", (req, res) => {
   res.sendStatus(200);
 });
 
 app.use(express.json());
 
-/* ✅ ROUTE */
-app.use('/api/plan', planRoute);
+/* ✅ IMPORTANT FIX */
+app.use('/api', planRoute);
 
 /* Health check */
 app.get('/', (req, res) => {

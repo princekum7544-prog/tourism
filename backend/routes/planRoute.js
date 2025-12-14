@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
-router.post('/', async (req, res) => {
-  console.log("PLAN HIT", req.body);
+router.post('/plan', async (req, res) => {
+ console.log("🔥 /api/plan HIT");
+  console.log("BODY:", req.body);
 
   return res.json({
     success: true,
